@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StreamToEarn Overlay</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> <!-- Подключение шрифта -->
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Press Start 2P', cursive; /* Используем шрифт Minecraft */
             background-color: #121212; /* Темный фон */
             color: #ffffff; /* Белый текст */
             margin: 0;
@@ -19,42 +20,52 @@
             margin-bottom: 20px;
         }
         .preset-images {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
+            display: grid; /* Используем CSS Grid для сетки */
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Автоматически создаем колонки */
+            gap: 15px; /* Промежутки между карточками */
         }
         .event-wrapper {
             background: #1e1e1e; /* Серый фон для карточек */
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            padding: 15px;
-            width: 150px; /* Ширина карточек */
+            padding: 10px; /* Уменьшили отступы */
             text-align: center;
+            display: flex; /* Используем flex для выравнивания */
+            flex-direction: column; /* Располагаем элементы вертикально */
+            align-items: center; /* Центрируем содержимое */
             transition: transform 0.2s;
+            height: 250px; /* Фиксированная высота карточки */
         }
         .event-wrapper:hover {
             transform: scale(1.05);
         }
+        .function-image-wrapper {
+            flex-grow: 1; /* Позволяет изображению занимать всё доступное пространство */
+            display: flex; /* Используем flex для выравнивания изображения */
+            justify-content: center; /* Центрируем изображение по горизонтали */
+            align-items: flex-end; /* Выравниваем изображение по нижнему краю */
+            padding: 5px; /* Отступ для изображения */
+        }
         .function-image-wrapper img {
             max-width: 100%;
-            height: auto;
+            height: auto; /* Автоматическая высота для сохранения пропорций */
+            max-height: 150px; /* Ограничиваем высоту изображения */
             border-radius: 5px; /* Скругленные углы изображений */
         }
         .repetition {
             font-size: 1.2em;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin: 5px 0; /* Уменьшили отступы */
         }
         .value {
-            padding: 0px;
+            padding: 0;
             border-radius: 5px;
-            margin-top: 10px;
+            margin-top: 5px; /* Уменьшили отступы */
             font-weight: bold;
             display: flex; /* Используем flex для выравнивания */
             justify-content: center; /* Центрируем содержимое */
             align-items: center; /* Выравниваем по вертикали */
-            height: 150px; /* Высота блока, можно увеличить для большего пространства */
+            height: 50px; /* Высота блока */
             overflow: hidden; /* Скрываем часть изображения, если оно слишком большое */
         }
         .value img {
@@ -104,74 +115,75 @@
 </header>
 
 <div class="preset-images">
-    <div class="rainbow"></div> <!-- zombie -->
+    <div class="rainbow"></div> <!-- Элемент радуги для анимации -->
+    
     <div class="event-wrapper">
         <span class="repetition">1x</span>
         <div class="function-image-wrapper">
-            <img src="s\zombie.png" alt="Zombie">
+            <img src="s/zombie.png" alt="Zombie">
         </div>
         <div class="value">
-            <img src="s\like-red.png" alt="Image">
+            <img src="s/like-red.png" alt="Image">
         </div>
     </div>
     
     <div class="event-wrapper">
         <span class="repetition">1x</span>
         <div class="function-image-wrapper">
-            <img src="s\golden_aplle.png" alt="Golden Apple">
+            <img src="s/golden_aplle.png" alt="Golden Apple">
         </div>
         <div class="value">
-            <img src="s\follow.png" alt="Image"> <!-- follow -->
+            <img src="s/follow.png" alt="Image"> <!-- follow -->
         </div>
     </div>
 
     <div class="event-wrapper">
         <span class="repetition">10 скелетов</span>
         <div class="function-image-wrapper">
-            <img src="s\45Ra.gif" alt="Skeleton Aiming">
+            <img src="s/45Ra.gif" alt="Skeleton Aiming">
         </div>
         <div class="value">
-            <img src="s\rose.webp" alt="Image"> <!-- rose -->
+            <img src="s/rose.webp" alt="Image"> <!-- rose -->
         </div>
     </div>
 
     <div class="event-wrapper">
         <span class="repetition">1x</span>
         <div class="function-image-wrapper">
-            <img src="s\2x2.png" alt="Minecraft Steve">
+            <img src="s/2x2.png" alt="Minecraft Steve">
         </div>
         <div class="value">
-            <img src="s\ruka.webp" alt="Image"> <!-- Замените на ваше изображение -->
+            <img src="s/ruka.webp" alt="Image"> <!-- Замените на ваше изображение -->
         </div>
     </div>
 
     <div class="event-wrapper">
         <span class="repetition">1x</span>
         <div class="function-image-wrapper">
-            <img src="s\diamond_armor.webp" alt="Steve in Diamond Armor">
+            <img src="s/diamond_armor.webp" alt="Steve in Diamond Armor">
         </div>
         <div class="value">
-            <img src="s\rosa.webp" alt="Image"> <!-- Замените на ваше изображение -->
+            <img src="s/rosa.webp" alt="Image"> <!-- Замените на ваше изображение -->
         </div>
     </div>
 
     <div class="event-wrapper">
         <span class="repetition">?</span>
         <div class="function-image-wrapper">
-            <img src="s\chto.png" alt="Question Mark">
+            <img src="s/chto.png" alt="Question Mark">
         </div>
         <div class="value">
-            <img src="s\serdse.webp" alt="Image"> <!-- Замените на ваше изображение -->
+            <img src="s/serdse.webp" alt="Image"> <!-- Замените на ваше изображение -->
         </div>
     </div>
 
     <div class="event-wrapper">
         <span class="repetition">ОМАЙГАДД</span>
         <div class="function-image-wrapper">
-            <img src="s\Ender_Dragon.webp" alt="Ender Dragon">
+            <img src="s/Ender_Dragon.webp" alt="Ender Dragon">
         </div>
         <div class="value">
-            <img src="s\donate_ender_dragon.webp" alt="Image"> <!-- Замените на ваше изображение -->
+            <img src="s/donate_ender_dragon.webp" alt="Image"> <!-- Замените на ваше изображение -->
         </div>
     </div>
 </div>
